@@ -1,9 +1,23 @@
+import Card from "./Components/Cards"
+import Header from "./Components/Header"
+import Navigation from "./Components/Navigation"
+import PokemonsMain from "./Layouts/PokemonsMain"
 
 function App() {
   
   return (
     <>
-     <h1 className="text-blue font-bold font-roboto">Hello world</h1>
+     <Header/>
+     <Navigation/>
+     <PokemonsMain>
+         <Card/>
+         <Card/>
+         <Card/>
+         <Card/>
+         <Card/>
+         <Card/>
+     </PokemonsMain>
+     
     </>
   )
 }
