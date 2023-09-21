@@ -16,7 +16,8 @@ export default {
         'orange': '#FAA532',
         'white2': '#FEFEFE',
         'black': '#061821',
-        'lightBlack': '#354052',
+        'lightBlack': '#354052'
+
       },
     },
   },
