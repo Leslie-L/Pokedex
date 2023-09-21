@@ -7,7 +7,9 @@ function Card({name, id,types,like}) {
     const dispatch = useDispatch();
     const newName = name.toUpperCase();
     const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id+1}.svg`
-    //const color = "boder-["+pokemonTypes[types[0].type.name].color+"]"
+    const color = {
+        backgroundColor: pokemonTypes[types[0].type.name].color
+    }
    
     const handleAddFavorite = ()=>{
         dispatch(addFavorite(id+1))
@@ -16,7 +18,7 @@ function Card({name, id,types,like}) {
         dispatch(deleteFavorite(id+1))
     }
     return(
-        <article className={`w-72 h-64 flex flex-col justify-center items-center  rounded-md border-4 border-lightBlack relative`}>
+        <article style={color} className={`w-72 h-64 flex flex-col justify-center items-center  rounded-md border-4 border-lightBlack relative`}>
             <div className="w-72 flex justify-between px-2">
                 <span className="font-roboto font-bold text-black text-lg">{newName}</span>
                 <span className="text-lg">{types.map(type=>{
