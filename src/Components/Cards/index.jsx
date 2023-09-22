@@ -7,6 +7,7 @@ function Card({name, id,types,like}) {
     const dispatch = useDispatch();
     const newName = name.toUpperCase();
     const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id+1}.svg`
+    
     const color = {
         backgroundColor: pokemonTypes[types[0].type.name].color
     }
@@ -28,6 +29,7 @@ function Card({name, id,types,like}) {
                 <span className="font-roboto font-light text-lightBlack text-2xl">N. {id+1}</span>
             </div>
             <img 
+            loading="lazy"
             className="w-48 h-48 drop-shadow-md"
             src={img} alt="Pokemon" />
             {

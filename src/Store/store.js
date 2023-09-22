@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import favoriteSlice from './Slices/favoriteSlice'
 import loadingSlice  from './Slices/loadingSlide'
-import { logger, saveData } from './Middleware'
+import { saveData } from './Middleware'
 
 
 
@@ -11,7 +11,6 @@ export const store = configureStore({
     loading:loadingSlice,
   },
   middleware:[
-    logger,
     saveData
   ]
 })

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   isLoading:false,
-  limit:10,
+  limit:6,
   offset:0,
 }
 
