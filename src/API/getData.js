@@ -8,3 +8,8 @@ export const getPokemonInfo = async (pokemon)=>{
     const data = await source.json()
     return data
 }
+export const getPokemonQuery = async (query)=>{
+    const source  = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
+    const data = await source.json()
+    return data
+}
