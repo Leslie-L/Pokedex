@@ -34,17 +34,22 @@ function App() {
     observer.current.observe(elementObserver.current);
     //observer.observe(elementObserver.current)
   },[isLoading]);
+
   useEffect(()=>{
+    console.log("new",newSearch)
     if(newSearch && search.length>0){
       const result =  async ()=>{
         dispatch(setLoading(true))
         const call = await getPokemonQuery(search.toLocaleLowerCase());
         setPokemons([call])
+
         setNewSearch(false);
         dispatch(resetResult())
         dispatch(setLoading(false))
       }
       result();
+    }else{
+      setNewSearch(false)
     }
   },[newSearch])
   useEffect(()=>{

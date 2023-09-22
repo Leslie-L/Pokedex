@@ -18,7 +18,7 @@ export const loadingSlice = createSlice({
        state.offset = state.limit+state.offset;
     },
     resetResult:(state,action)=>{
-        state.offset=-6;
+        state.offset = (-6);
     }
   },
 })

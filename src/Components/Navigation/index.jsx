@@ -10,6 +10,7 @@ function Navigation({search,setSearch,setNewSearch,setPokemons}) {
             setPokemons([])
             console.log("back")
         }else if(event.key==='Enter'){
+            console.log("enter")
             setNewSearch(true);
          } 
     }
