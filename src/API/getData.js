@@ -1,7 +1,9 @@
+
+
 export const getPokemons = async (limit,offset)=>{
     const src = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     const data = await src.json();
-    return data.results;
+    return {result:data.results, next:data.next};
 }
 export const getPokemonInfo = async (pokemon)=>{
     const source  = await fetch(pokemon.url);
@@ -10,6 +12,7 @@ export const getPokemonInfo = async (pokemon)=>{
 }
 export const getPokemonQuery = async (query)=>{
     const source  = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
-    const data = await source.json()
+    if(source.status===404) return -1
+    const data = await source.json();
     return data
 }
