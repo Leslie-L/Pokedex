@@ -36,7 +36,7 @@ export const getEvolutionChain =async (url) =>{
         'second':data.chain.evolves_to[0].species.name,
         id2,
         'third':data.chain.evolves_to[0]?.evolves_to[0]?.species?.name || undefined,
-        ide3: id3 || undefined,
+        id3: id3 || undefined,
     }
             
     return res

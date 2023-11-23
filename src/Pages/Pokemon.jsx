@@ -31,6 +31,7 @@ function Pokemon() {
         if(pokemon){
             const speciesURL = pokemon.species.url;
             getEvolutionChain(speciesURL).then(data=>setEvolution(data)); 
+            console.log(evolution)
         }
     },[pokemon])
     const handleBack = ()=>{
