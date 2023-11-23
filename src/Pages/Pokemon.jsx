@@ -24,13 +24,14 @@ function Pokemon() {
         if(pokemon===-1){
             setError('Pokemon not Found!')
         }
-            
+        dispatch(resetResult());   
         setIsLoading(false)
     },[])
     useEffect(()=>{
         if(pokemon){
             const speciesURL = pokemon.species.url;
             getEvolutionChain(speciesURL).then(data=>setEvolution(data)); 
+            dispatch(resetResult());
             console.log(evolution)
         }
     },[pokemon])
