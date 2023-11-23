@@ -21,7 +21,7 @@ function App() {
   const notFound = useSelector((state)=>state.loading.notFound)
   const favPokemons = useSelector((state)=>state.favorites.favorites)
   const dispatch = useDispatch()
-  dispatch(resetResult())
+  
   const observer = useRef(null);
   useEffect(()=>{
     if (isLoading || !elementObserver.current || newSearch) return;

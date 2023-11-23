@@ -28,15 +28,15 @@ export const getEvolutionChain =async (url) =>{
     const id1 = sol1.id; 
     const sol2 = await getPokemonQuery(data.chain.evolves_to[0].species.name);
     const id2 = sol2.id; 
-    const sol3 = await getPokemonQuery(data.chain.evolves_to[0].evolves_to[0].species.name);
+    const sol3 = await getPokemonQuery(data.chain.evolves_to[0]?.evolves_to[0]?.species?.name);
     const id3 = sol3.id; 
     const res ={
         'first':data.chain.species.name,
         id1,
         'second':data.chain.evolves_to[0].species.name,
         id2,
-        'third':data.chain.evolves_to[0].evolves_to[0].species.name,
-        id3
+        'third':data.chain.evolves_to[0]?.evolves_to[0]?.species?.name || undefined,
+        ide3: id3 || undefined,
     }
             
     return res
