@@ -1,7 +1,7 @@
 # Pokedex Redux
 
 Proyecto educativo para aprender el uso de Redux en una aplicación React.
-
+- [Link del proyecto](https://velvety-monstera-4607d4.netlify.app/)
 ## Características
 
 - Consumo de la API de Pokémon para obtener información.
